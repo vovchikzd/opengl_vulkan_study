@@ -12,3 +12,8 @@ add_executable(result)
 target_sources(result PUBLIC
                  ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
 )
+
+find_package(glfw3 3.3 REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(OpenGL REQUIRED)
+target_link_libraries(result PUBLIC glfw GLEW::glew OpenGL::GL)
